@@ -32,5 +32,19 @@ document.addEventListener('DOMContentLoaded', function() {
     boardContainer.innerHTML = "";
   }
 
+  function removeWarning(){
+    var warning = document.querySelector('.warning');
+    if(warning) {
+      warning.remove();
+    }
+  }
+  
+  function displayWarning(){
+    var warning = document.createElement('p');
+    warning.classList.add("warning")
+    warning.innerText = "Invalid board size";
+    main.prepend(warning);
+  }
+
 
 });
