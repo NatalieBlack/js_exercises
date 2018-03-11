@@ -1,0 +1,11 @@
+.list, .foods {
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.foods span:hover {
+  background: #DDD;
+  color: blue;
+  cursor: pointer;
+}
+
