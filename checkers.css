@@ -1,0 +1,14 @@
+td {
+  border: 1px solid black;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+}
+
+.piece {
+  display: inline-block;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: 1px solid red;
+}
