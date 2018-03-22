@@ -1,0 +1,19 @@
+div {
+  border: 1px solid #333;
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.top div {
+  background-color: aliceblue;
+}
+
+.bottom div {
+  background-color: lightsalmon;
+}
+
+section {
+  margin: 40px 0px;
+}
