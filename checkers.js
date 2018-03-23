@@ -3,35 +3,30 @@ document.addEventListener("DOMContentLoaded", function() {
   var firstRowSquares = document.querySelectorAll("tr:first-child td");
   for (var i = 0; i < firstRowSquares.length; i++) {
     var square = firstRowSquares[i];
-    var piece = document.createElement("div");
-    piece.classList.add("piece");
+    var piece = createPiece();
     square.appendChild(piece);
-    //
-
     };
 
-    square.addEventListener('click', function(){
-      var allSquares = document.querySelectorAll("tr td");
-      for (var i=0; i< allSquares.length; i++){
-        var piece = document.createElement("div");
-        var singleSquare = allSquares[i];
+  var allSquares = document.querySelectorAll('td');
 
-        singleSquare.addEventListener('click', function(){
-         if(this.hasChildNodes() === false){
-           var square = this.querySelector("div");
-           this.appendChild(piece);
-           square.classList.add("piece");
-         }
-       });
-        square.addEventListener('click', function(){
-          if(this.hasChildNodes()){
-            this.removeChild(this.child);
-           }
-        });
+  for(var i =0; i<allSquares.length; i++){
+    var singleSquare = allSquares[i];
+
+    singleSquare.addEventListener('click', function(){
+      piece = createPiece();
+      if(this.hasChildNodes() === true){
+       this.removeChild(this.firstChild);
+      }else{
+        this.appendChild(piece);
       }
     })
+  }
 
 
-
+ function createPiece(){
+   var piece = document.createElement("div");
+   piece.classList.add("piece");
+   return piece;
+ }
 
 })
