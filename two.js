@@ -31,8 +31,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         }
 
-
-
       }
 
     }else{
@@ -68,11 +66,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function makeCellsClickable() {
     var cells = document.querySelectorAll(".cell");
+    var lastCell;
 
     for (var i = 0; i < cells.length; i++) {
       var cell = cells[i];
       cell.addEventListener('click', function(){
-        this.innerText="X"
+        if( lastCell === undefined  || lastCell.innerText === "O" ){
+            this.innerText="X"
+        }else{
+          this.innerText="O"
+        }
+      lastCell = this;
       });
     }
 
