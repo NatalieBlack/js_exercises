@@ -8,6 +8,12 @@ div {
   line-height: 75px;
 }
 
+button {
+  margin: 0 20px;
+  background: white;
+  border: 1px dotted #333;
+}
+
 section {
   margin: 25px;
 }
@@ -15,6 +21,11 @@ section {
 .brushes div {
   width: 25px;
   height: 25px;
+}
+
+.colours div {
+  width: 30px;
+  height: 30px;
 }
 
 .circle {

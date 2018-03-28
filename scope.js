@@ -4,11 +4,30 @@ document.addEventListener("DOMContentLoaded", function() {
   var canvasSquares = document.querySelectorAll(".canvas div");
   var currentColour;
   var currentBrush;
+  var cleanButton = document.querySelector("#clean");
+
+  cleanButton.addEventListener("click", function() {
+    for (var i = 0; i < brushes.length; i++) {
+      brushes[i].style.backgroundColor = "white";
+    }
+  })
 
   for (var i = 0; i < colours.length; i++) {
     var colour = colours[i];
     colour.addEventListener("click", function() {
-      currentColour = window.getComputedStyle(this).backgroundColor;
+      currentBrush.style.backgroundColor = window.getComputedStyle(this).backgroundColor;
+    })
+    
+    this.addEventListener("mouseover", function() {
+      if(currentBrush === undefined){
+        document.body.style.cursor = "not-allowed";
+      }
+    })
+
+    this.addEventListener("mouseleave", function() {
+      if(currentBrush === undefined){
+        document.body.style.cursor = "auto";
+      }
     })
   }
 
@@ -20,14 +39,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
   for (var i = 0; i < canvasSquares.length; i++) {
     var square = canvasSquares[i];
-    var blob = document.createElement("div");
-    
     square.addEventListener("click", function() {
+      var blob = document.createElement("div");
       blob.classList.add("blob");
       blob.classList.add(currentBrush.classList[0] + "Brush");
       this.innerHTML = "";
       this.appendChild(blob);
-      blob.style.backgroundColor = currentColour;
+      blob.style.backgroundColor = currentBrush.style.backgroundColor;
     })
   }
 
