@@ -1,16 +1,18 @@
 document.addEventListener("DOMContentLoaded", function() {
-  var submitButton = document.querySelector("input[type=submit]");
-  var inputs = document.querySelectorAll("input");
-<<<<<<< HEAD
-=======
+  var submitButtons = document.querySelectorAll("input[type=submit]");
 
->>>>>>> 3ebcccb27018b2d5e1e72abab2dd6754a6b0a767
+for(var i=0; i < submitButtons.length; i++){
+  var submitButton = submitButtons[i];
   submitButton.addEventListener("click", function(e) {
     e.preventDefault();
     this.value = "Submitted"
-    for (var i = 0; i < inputs.length; i++) {
-
-      inputs[i].disabled = true;
+    var inputs = this.parentNode.querySelectorAll("input");
+    console.log(inputs);
+    for( var j=0; j < inputs.length; j++){
+      inputs[j].disabled = true;
     }
   })
+
+}
+
 })
