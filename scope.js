@@ -18,13 +18,13 @@ document.addEventListener("DOMContentLoaded", function() {
       currentBrush.style.backgroundColor = window.getComputedStyle(this).backgroundColor;
     })
 
-    colour.addEventListener("mouseover", function() {
+    this.addEventListener("mouseover", function() {
       if(currentBrush === undefined){
         document.body.style.cursor = "not-allowed";
       }
     })
 
-    colour.addEventListener("mouseleave", function() {
+    this.addEventListener("mouseleave", function() {
       if(currentBrush === undefined){
         document.body.style.cursor = "auto";
       }
