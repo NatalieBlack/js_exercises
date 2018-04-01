@@ -1,11 +1,15 @@
 document.addEventListener("DOMContentLoaded", function() {
   var button = document.querySelector("button");
   var main = document.querySelector("main");
-  
+
   button.addEventListener("click", function() {
+    var outerBlob = document.createElement("div");
     var blob = document.createElement("div");
     blob.classList.add("blob");
-    main.appendChild(blob);
+    outerBlob.appendChild(blob);
+    outerBlob.classList.add("outerBlob");
+    main.appendChild(outerBlob);
+    
     blob.addEventListener("mousedown", function() {
       var pickedUp = this;
       pickedUp.classList.add("picked");

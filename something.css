@@ -1,8 +1,21 @@
-.blob {
+* {
+  box-sizing: border-box;
+}
+.outerBlob {
   border-radius: 50%;
   height: 25px;
   width: 25px;
   background: salmon;
+  text-align: center;
+  padding: 5px 0px;
+}
+
+.blob {
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  background: gold;
+  border-radius: 50%;
 }
 
 .picked {
