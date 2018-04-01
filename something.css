@@ -4,3 +4,7 @@
   width: 25px;
   background: salmon;
 }
+
+.picked {
+  position: fixed;
+}
