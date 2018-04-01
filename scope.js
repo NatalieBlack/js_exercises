@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
   for (var i = 0; i < colours.length; i++) {
     var colour = colours[i];
     colour.addEventListener("click", function() {
-      currentColour = window.getComputedStyle(this).backgroundColor;
+       currentColour = window.getComputedStyle(this).backgroundColor;
     })
   }
 
@@ -20,9 +20,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
   for (var i = 0; i < canvasSquares.length; i++) {
     var square = canvasSquares[i];
-    var blob = document.createElement("div");
-    
+
+
     square.addEventListener("click", function() {
+      var blob = document.createElement("div");
       blob.classList.add("blob");
       blob.classList.add(currentBrush.classList[0] + "Brush");
       this.innerHTML = "";
