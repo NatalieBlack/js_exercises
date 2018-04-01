@@ -9,8 +9,8 @@ document.addEventListener("DOMContentLoaded", function() {
     outerBlob.appendChild(blob);
     outerBlob.classList.add("outerBlob");
     main.appendChild(outerBlob);
-    
-    blob.addEventListener("mousedown", function() {
+
+    outerBlob.addEventListener("mousedown", function() {
       var pickedUp = this;
       pickedUp.classList.add("picked");
 
