@@ -9,16 +9,19 @@ document.addEventListener("DOMContentLoaded", function() {
     blob.addEventListener("mousedown", function() {
       var pickedUp = this;
       pickedUp.classList.add("picked");
+
+      document.addEventListener("mousemove", function(e) {
+        if(pickedUp !== null) {
+          pickedUp.style.left = e.clientX + "px";
+          pickedUp.style.top = e.clientY + "px";
+        }
+      });
+      document.addEventListener("mouseup", function() {
+        pickedUp = null;
+      })
     })
+
   })
 
-  document.addEventListener("mousemove", function(e) {
-    if(pickedUp !== null) {
-      pickedUp.style.left = e.clientX + "px";
-      pickedUp.style.top = e.clientY + "px";
-    }
-  });
-  document.addEventListener("mouseup", function() {
-    pickedUp = null;
-  })
+
 })
