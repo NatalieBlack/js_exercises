@@ -4,6 +4,13 @@ document.addEventListener("DOMContentLoaded", function() {
   var canvasSquares = document.querySelectorAll(".canvas div");
   var currentColour;
   var currentBrush;
+  var cleanButton = document.querySelector("#clean");
+
+  cleanButton.addEventListener("click", function() {
+    for (var i = 0; i < brushes.length; i++) {
+      brushes[i].style.backgroundColor = "white";
+    }
+  })
 
   for (var i = 0; i < colours.length; i++) {
     var colour = colours[i];
@@ -28,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
       blob.classList.add(currentBrush.classList[0] + "Brush");
       this.innerHTML = "";
       this.appendChild(blob);
-      blob.style.backgroundColor = currentColour;
+      blob.style.backgroundColor = currentBrush.style.backgroundColor;
     })
   }
 
