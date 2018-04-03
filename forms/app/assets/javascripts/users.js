@@ -7,14 +7,22 @@ document.addEventListener("DOMContentLoaded", function() {
       e.preventDefault();
       this.querySelector("input[type=submit]").value = "Submitted"
       var inputs = this.querySelectorAll("input");
+      const formData = new FormData(this);
 
-      $.ajax({ url: this.action,
-        method: this.method,
-        data: $(this).serialize(),
-        dataType: 'JSON'
-      }).done(function(response){
-        console.log(response);
-      });
+      var token = document.querySelector("meta[name=csrf-token]").content;
+      var headers = new Headers();
+      headers.set('Accept', 'application/json');
+      headers.set('X-Requested-With', 'XMLHttpRequest');
+      headers.set('X-CSRF-Token', token);
+
+      fetch(this.action, {
+      method: this.method,
+      headers,
+      body: formData,
+      credentials: 'same-origin'
+
+    })
+
     })
   }
 })
