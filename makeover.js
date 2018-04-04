@@ -19,10 +19,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     stageBackground();
   })
-for (var i = 0; i < buttons.length; i++) {
+for (var j = 0; j < buttons.length; j++) {
   var button = buttons[i];
 
-  this.addEventListener("click", function() {
+  button.addEventListener("click", function() {
     var innerShape = document.createElement("div");
     innerShape.classList.add("innerShape");
     var outerShape = document.createElement("div");
