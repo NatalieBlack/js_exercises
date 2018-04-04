@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   })
 
-  for (var i = 0; i < colours.length; i++) {
+  for (var j = 0; j < colours.length; j++) {
     var colour = colours[i];
     colour.addEventListener("click", function() {
       currentBrush.style.backgroundColor = window.getComputedStyle(this).backgroundColor;
