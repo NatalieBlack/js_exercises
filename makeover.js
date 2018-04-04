@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     stageBackground();
   })
-for (var j = 0; j < buttons.length; j++) {
+for (var i = 0; i < buttons.length; i++) {
   var button = buttons[i];
 
   button.addEventListener("click", function() {
@@ -90,7 +90,7 @@ function hasClass(element, specificName){
       return true;
     }
   });
-  return matches.length > 0;
+  matches.length > 0;
 }
 function stageBackground() {
   document.body.style.backgroundImage = "url('http://actorsbreakthrough.com//actorsbreakthrough.com/wp-content/uploads/2013/04/Stage-Spotlights-Background-1024x719.png')"
