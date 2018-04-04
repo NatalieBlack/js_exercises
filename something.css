@@ -18,6 +18,13 @@ html, body {
 button {
   clear: both;
 }
+.outerSplotch {
+  height: 25px;
+  width: 25px;
+  background: mediumaquamarine;
+  text-align: center;
+  padding: 5px 0px;
+}
 .outerBlob {
   border-radius: 50%;
   height: 25px;
@@ -27,7 +34,16 @@ button {
   padding: 5px 0px;
 }
 
-.blob {
+.outerBloop {
+  height: 25px;
+  width: 25px;
+  background: fuchsia;
+  text-align: center;
+  padding: 5px 0px;
+  transform: rotate(45deg);
+}
+
+.innerShape {
   display: inline-block;
   height: 15px;
   width: 15px;
@@ -49,4 +65,8 @@ button {
 #showTime:hover {
   background: gold;
   border-color: white;
+}
+
+main {
+  margin: 10px 0px;
 }
