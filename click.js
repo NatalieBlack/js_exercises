@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
   var photos = document.querySelectorAll("img");
-  var frames = document.querySelectorAll(".frame");
+  var frames = document.querySelectorAll("frame");
   var selection;
   var resetButton = document.querySelector("button");
   var options = document.querySelector(".options");
