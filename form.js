@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-  var forms = document.querySelectorAll("forms");
+  var forms = document.querySelectorAll("form");
   var textBoxes = document.querySelectorAll("input[type=text]")
 
   for (var i = 0; i < textBoxes.length; i++) {

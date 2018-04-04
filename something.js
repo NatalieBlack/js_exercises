@@ -1,32 +1,35 @@
 document.addEventListener("DOMContentLoaded", function() {
-  var button = document.querySelector("button");
+  var buttons = document.querySelectorAll("button");
   var main = document.querySelector("main");
   var magicMakeover = document.querySelector("#makeover");
   var makeoverArea = magicMakeover.getBoundingClientRect();
   var count = 0;
 
-  button.addEventListener("click", function() {
-    var outerBlob = document.createElement("div");
-    var blob = document.createElement("div");
-    blob.classList.add("blob");
-    outerBlob.appendChild(blob);
-    outerBlob.classList.add("outerBlob");
-    outerBlob.id = count;
-    count++;
-    main.appendChild(outerBlob);
+for (var i = 0; i < buttons.length; i++) {
+  var button = buttons[i];
 
-    outerBlob.addEventListener("mousedown", function() {
+  button.addEventListener("click", function() {
+    var innerShape = document.createElement("div");
+    innerShape.classList.add("innerShape");
+    var outerShape = document.createElement("div");
+    outerShape.appendChild(innerShape);
+    outerShape.classList.add(this.id);
+    outerShape.id = count;
+    count++;
+    main.appendChild(outerShape);
+
+    outerShape.addEventListener("mousedown", function() {
       var pickedUp = this;
       pickedUp.classList.add("picked");
 
       document.addEventListener("mousemove", function(event) {
         if(pickedUp !== null) {
-          pickedUp.style.left = event.clientX + "px";
-          pickedUp.style.top = event.clientY + "px";
-          if(insideMakeoverBooth()){
-            pickedUp.style.backgroundColor = randomColour();
-            pickedUp.style.border = randomBorder();
-            pickedUp.innerHTML = "";
+          outerShape.style.left = event.clientX + "px";
+          outerShape.style.top = event.clientY + "px";
+          if(insideMakeoverBooth(event)){
+            outerShape.style.backgroundColor = randomColour();
+            outerShape.style.border = randomBorder();
+            outerShape.innerHTML = "";
           }
         }
       });
@@ -36,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
     })
 
   })
+}
 
   function insideMakeoverBooth(event){
       return event.clientX < makeoverArea.right &&
