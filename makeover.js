@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
       notReadyShapes[i].remove();
     }
 
-    stageBackground();
+    stageBackground;
   })
 for (var i = 0; i < buttons.length; i++) {
   var button = buttons[i];
@@ -90,7 +90,7 @@ function hasClass(element, specificName){
       return true;
     }
   });
-  matches.length > 0;
+  return matches.length > 0;
 }
 function stageBackground() {
   document.body.style.backgroundImage = "url('http://actorsbreakthrough.com//actorsbreakthrough.com/wp-content/uploads/2013/04/Stage-Spotlights-Background-1024x719.png')"
