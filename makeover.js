@@ -9,10 +9,13 @@ document.addEventListener("DOMContentLoaded", function() {
   showTime.addEventListener("click", function() {
     var shapes = document.querySelectorAll("main > div");
     var notReadyShapes = Array.from(shapes).filter(function(shape){
-      var shapeNotReady = !hasClass(shape, "madeOver");
-      return shapeNotReady;
-    });
+      console.log(hasClass(shape, "madeOver"));
+      var shapeNotReady = hasClass(shape, "madeOver");
+      if(shapeNotReady.length === 0){
+        return true
+      }
 
+    });
     for (var i = 0; i < notReadyShapes.length; i++) {
       notReadyShapes[i].remove();
     }
@@ -90,7 +93,7 @@ function hasClass(element, specificName){
       return true;
     }
   });
-  matches.length > 0;
+return matches;
 }
 function stageBackground() {
   document.body.style.backgroundImage = "url('http://actorsbreakthrough.com//actorsbreakthrough.com/wp-content/uploads/2013/04/Stage-Spotlights-Background-1024x719.png')"
