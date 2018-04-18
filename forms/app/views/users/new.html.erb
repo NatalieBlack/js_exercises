@@ -1,0 +1,19 @@
+<h2>New User</h2>
+<%= form_for @user do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  <%= f.hidden_field :admin %>
+  <%= f.submit %>
+<% end %>
+
+<h2>New Admin</h2>
+<%= form_for @admin do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  <%= f.hidden_field :admin %>
+  <%= f.submit "Create Admin"%>
+<% end %>
