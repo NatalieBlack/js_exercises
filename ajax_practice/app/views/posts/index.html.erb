@@ -2,8 +2,17 @@
 
 <section id="display">
   <% @posts.each do |post| %>
-  <h2> <%= post.title %> </h2>
-  <p> <%= post.body %> </p>
+    <h2> <%= post.title %> </h2>
+    <p> <%= post.body %> </p>
+    <% if post.ratings.empty? %>
+      <%= form_for Rating.new do |f| %>
+        <%= f.hidden_field :post_id, value: post.id %>
+          <% (1...5).each do |i| %>
+            <%= f.label :stars, i %>
+            <%= f.radio_button :stars, i %>
+          <% end %>
+      <% end %>
+    <% end %>
   <% end %>
 </section>
 
