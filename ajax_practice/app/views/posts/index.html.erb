@@ -4,7 +4,10 @@
   <% @posts.each do |post| %>
     <h2> <%= post.title %> </h2>
     <p> <%= post.body %> </p>
+  <section class="current_form">
+
     <% if post.ratings.empty? %>
+      <p class="rating"></p>
       <%= form_for Rating.new do |f| %>
         <%= f.hidden_field :post_id, value: post.id %>
           <% (1...5).each do |i| %>
@@ -12,7 +15,10 @@
             <%= f.radio_button :stars, i %>
           <% end %>
       <% end %>
+      <% else %>
+      <%= post.ratings.last.stars %>
     <% end %>
+  </section>
   <% end %>
 </section>
 

@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
   var body = document.getElementById('post_body');
   var form = document.getElementById('new_post');
   var display = document.getElementById('display');
-  console.log(display)
+  // console.log(display)
   form.addEventListener('submit', function(e){
     e.preventDefault();
 
