@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     var token = document.querySelector("meta[name=csrf-token]").content;
     var headers = new Headers();
-    headers.set('Accept', 'application/json');
+    headers.set('Accept', 'text/html');
     headers.set('X-Requested-With', 'XMLHttpRequest');
     headers.set('X-CSRF-Token', token);
 
@@ -22,18 +22,20 @@ document.addEventListener("DOMContentLoaded", function() {
       credentials: 'same-origin'
     })
   .then(function(response) {
-    return response.json();
+    return response.text();
   })
-  .then(function(myJson) {
-    var post_title = myJson.title;
-    var post_body = myJson.body
-    var h2 = document.createElement('h2');
-    var p = document.createElement('p');
-    h2.innerText = post_title;
-    p.innerText= post_body;
-
-    display.prepend(p);
-    display.prepend(h2);
+  .then(function(htmlResponse) {
+    // var post_title = myJson.title;
+    // var post_body = myJson.body
+    // var h2 = document.createElement('h2');
+    // var p = document.createElement('p');
+    // h2.innerText = post_title;
+    // p.innerText= post_body;
+    //
+    // display.prepend(p);
+    var section = document.createElement("section");
+    section.innerHTML = htmlResponse;
+    display.prepend(section);
   })
 
 
