@@ -2,9 +2,17 @@ class TransactionsController < ApplicationController
   def home
     render :index
   end
-  
+
+  def new_sale
+    render partial: "sale_form"
+  end
+
+  def new_purchase
+    render partial: "purchase_form"
+  end
+
   def index
-    render json:  [
+    render json:  { transactions: [
   {
     type: 'sale',
     paymentMethod: 'cash',
@@ -114,5 +122,6 @@ class TransactionsController < ApplicationController
     ]
   }
   ]
+  }
   end
 end
